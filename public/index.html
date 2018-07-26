@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -25,10 +26,13 @@
     <!-- Load RiotJS and the COMPILER, which will transform your tags into JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.11.1/riot+compiler.js"></script>
     <!-- include the tag javascript output generated with the riot compiler -->
-    <script src="/public/tags/rain.tag" type="riot/tag"></script>
+    <script src="./tags/rain.tag" type="riot/tag"></script>
 
     <!-- mount the tag -->
-    <script src="/js/main.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        riot.mount('*');
+    </script>
 
     <script>
         // Initialize Firebase

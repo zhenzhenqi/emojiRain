@@ -39,7 +39,7 @@ thisEl.style.left = `${(Math.random() * 100)}%`;
 thisEl.style.top = `${Math.random() * -80 }%`;
 
 var bgIndex = Math.floor(Math.random() * filenames.length);
-thisEl.style.backgroundImage = "url(public/img/"+ filenames[bgIndex] +")";
+thisEl.style.backgroundImage = "url(./img/"+ filenames[bgIndex] +")";
 
 
 shuffleBg(e){

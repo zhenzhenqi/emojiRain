@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>emoji rain</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/5.3.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/5.3.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.3.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/5.3.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/5.3.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+
+</head>
+
+<body>
+    <rain></rain>
+
+
+    <!-- Load RiotJS and the COMPILER, which will transform your tags into JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.11.1/riot+compiler.js"></script>
+    <!-- include the tag javascript output generated with the riot compiler -->
+    <script src="/public/tags/rain.tag" type="riot/tag"></script>
+
+    <!-- mount the tag -->
+    <script src="/js/main.js"></script>
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBJN-Vqu-cxldEi93TjkEezVuii8NB5aYs",
+            authDomain: "echo-cfa29.firebaseapp.com",
+            databaseURL: "https://echo-cfa29.firebaseio.com",
+            projectId: "echo-cfa29",
+            storageBucket: "echo-cfa29.appspot.com",
+            messagingSenderId: "678916991576"
+        };
+
+        firebase.initializeApp(config);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            //         // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+            //         // The Firebase SDK is initialized and available here!
+            //
+            //         firebase.auth().onAuthStateChanged(user => { });
+            //         firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+            //         firebase.messaging().requestPermission().then(() => { });
+            //         firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+            //
+            //         // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+            try {
+                let app = firebase.app();
+                let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+                console.log(`Firebase SDK loaded with ${features.join(', ')}`) ;
+            } catch (e) {
+                console.error(e);
+                console.log('Error loading the Firebase SDK, check the console.');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
